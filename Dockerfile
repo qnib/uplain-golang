@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     git \
     libc6-dev \
+    libseccomp-dev \
     make \
     pkg-config \
  && rm -rf /var/lib/apt/lists/*
