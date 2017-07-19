@@ -3,8 +3,10 @@ FROM qnib/uplain-init
 # Inspired by the official golang image
 # > https://github.com/docker-library/golang/blob/132cd70768e3bc269902e4c7b579203f66dc9f64/1.8/Dockerfile
 
+ARG LIBRDKAFKA_VER=0.11.0.x
 RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-transport-https \
+    bsdtar \
     ca-certificates \
     curl \
     g++ \
@@ -12,8 +14,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     libc6-dev \
     libseccomp-dev \
+    librdkafka-dev \
+    python \
     make \
     pkg-config \
+    wget \
+ && cd /usr/local/src/ \
+ && wget -qO -  https://github.com/edenhill/librdkafka/archive/${LIBRDKAFKA_VER}.zip| bsdtar xzf - -C . \
+ && cd librdkafka-${LIBRDKAFKA_VER} \
+ && chmod +x configure lds-gen.py \
+ && ./configure \
+ && make \
+ && make install \
  && rm -rf /var/lib/apt/lists/*
 
 ENV GOLANG_VERSION 1.8
