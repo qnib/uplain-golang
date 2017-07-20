@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     g++ \
     gcc \
     git \
+    libbind9-140 \
     libc6-dev \
     libdns162 \
     libseccomp-dev \
@@ -21,6 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     pkg-config \
     wget \
  && cd /usr/local/src/ \
+ && echo "https://github.com/edenhill/librdkafka/archive/${LIBRDKAFKA_VER}.zip" \
  && wget -qO -  https://github.com/edenhill/librdkafka/archive/${LIBRDKAFKA_VER}.zip| bsdtar xzf - -C . \
  && cd librdkafka-${LIBRDKAFKA_VER} \
  && chmod +x configure lds-gen.py \
