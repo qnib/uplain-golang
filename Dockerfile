@@ -9,12 +9,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     bsdtar \
     ca-certificates \
     curl \
+    dnsutils \
     g++ \
     gcc \
     git \
     libbind9-140 \
     libc6-dev \
-    libdns162 \
     libseccomp-dev \
     librdkafka-dev \
     python \
