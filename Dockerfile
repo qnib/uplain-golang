@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     g++ \
     gcc \
     git \
-    libbind9-90 \
+    libbind9-140 \
     libc6-dev \
     libseccomp-dev \
     librdkafka-dev \
