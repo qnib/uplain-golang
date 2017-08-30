@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python \
     make \
     pkg-config \
+    vim \
     wget \
  && cd /usr/local/src/ \
  && echo "https://github.com/edenhill/librdkafka/archive/${LIBRDKAFKA_VER}.zip" \
