@@ -48,4 +48,5 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 RUN curl -fsSL https://github.com/docker-library/golang/raw/132cd70768e3bc269902e4c7b579203f66dc9f64/1.8/go-wrapper -o /usr/local/bin/go-wrapper \
  && chmod +x /usr/local/bin/go-wrapper
 RUN go get -u github.com/kardianos/govendor \
- && go get github.com/chouquette/coveraggregator
+ && go get github.com/chouquette/coveraggregator \
+ && go get -u github.com/golang/lint/golint
