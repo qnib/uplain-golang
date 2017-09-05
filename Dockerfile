@@ -14,6 +14,7 @@ RUN apt-get update -qq \
     gcc \
     git \
     pkg-config \
+    libc6-dev \
     libseccomp-dev \
     librdkafka-dev
 
