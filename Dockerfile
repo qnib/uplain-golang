@@ -18,7 +18,7 @@ RUN apt-get update -qq \
     libseccomp-dev \
     librdkafka-dev
 
-ARG GOLANG_VERSION=1.9
+ARG GOLANG_VERSION=1.9.2
 ARG GOLANG_DOWNLOAD_URL=https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz
 ENV GOPATH /usr/local/
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
